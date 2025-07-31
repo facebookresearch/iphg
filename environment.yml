@@ -1,0 +1,29 @@
+name: inverse_hair_grooming
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+  - nvidia
+dependencies:
+  - cuda-toolkit=11.8
+  - gxx_linux-64=11.2.0
+  - pip=23.3.1
+  - python=3.10
+  - pytorch=2.0.0
+  - pytorch-cuda=11.8
+  - torchvision=0.15.0
+  - meshio=5.3.5
+  - ninja=1.10.1
+  - faiss-gpu
+  - opencv
+  - tqdm
+  - numpy
+  - scipy
+  - scikit-learn-extra
+  - pillow
+  - pip:
+    - matplotlib>=3.5.3
+    - plyfile==0.8.1
+    - warp-lang==0.11.0
+    - largesteps==0.2.2
+    - submodules/nvdiffrast
