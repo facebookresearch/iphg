@@ -18,7 +18,6 @@ if module_path not in sys.path:
     sys.path.append(module_path)
 
 from head import HeadModel
-from grooming_graph.importer.curves import import_curves_file
 from grooming_graph.utils.hair import resample_strands
 from grooming_graph.operators.guides import BoundedParameter
 from grooming_graph.operators import (
@@ -109,8 +108,8 @@ print()
 our_groom = grooming_chain(roots, our_guides, head.scalp_get_normal(our_guides[:, 0]))
 
 # Guide editing
-guides_path = os.path.join(dataset_path, "guides.txt")
-guides_long = import_curves_file(guides_path, swap_yz=False).cuda()
+guides_path = os.path.join(dataset_path, "guides.npy")
+guides_long = torch.from_numpy(np.load(guides_path)).cuda()
 guides_long = head.scale_to_head(guides_long)
 guides_long = head.project_strands_onto_scalp(guides_long)
 edited_guides = resample_strands(guides_long, our_guides.shape[1])
