@@ -67,7 +67,7 @@ This will save rendered images to `output/[example]/[experiment number]/images`.
 ## Editing grooms
 Run `synthetic-grooms-coily` first, then see example in `scripts/editing.py`.
 ```bash
-python scripts/train-3d.py --dataset synthetic-grooms-coily
+python train-3d.py --dataset synthetic-grooms-coily
 python scripts/editing.py
 ```
 
